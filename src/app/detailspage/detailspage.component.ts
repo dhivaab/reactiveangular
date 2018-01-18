@@ -13,10 +13,12 @@ export class DetailspageComponent implements OnInit {
   edited: boolean;
   editedid: number;
   editedname: string;
+  hname: string;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   // add books
   add(id, name) {
@@ -48,5 +50,4 @@ export class DetailspageComponent implements OnInit {
   }
     this.edited = false;
   }
-
 }

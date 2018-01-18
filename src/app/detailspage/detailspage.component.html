@@ -1,18 +1,27 @@
 <form>
+<!-- header view  two way data binding -->
+<div>
+  <h1>{{ hname }}</h1>
+</div>
+<input type="text" [(ngModel)]="hname" name="hname">
+<input type="text" [(ngModel)]="hname" name="hname">
+
+
 <!-- add books -->
 <p>
-  Id: <input type="number" #id>
+  Id: <input type="number"  #id>
 </p>
 <p>
   Name: <input type="text" #name>
 </p>
 <p>
-<button (click)="add(id.value,name.value)">submit</button>
+<button (click)="add(id.value,name.value)" >submit</button>
+</p>
 
 <!-- list books -->
-</p>
   <ul>
-    <li *ngFor="let value of list">
+    <li *ngFor="let value of list;let i= index">
+      {{ i+1 }}
       {{ value.id }}
       {{ value.name }}
        <input type ="button" value ="Edit" (click) =edit(value.id,value.name)>
