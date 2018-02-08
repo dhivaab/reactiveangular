@@ -1,0 +1,28 @@
+
+  usercomp works!
+  {{ names }}
+
+  <table *ngFor="let pro of users">
+    <tr>
+      <th>pro.id</th>
+      <th>pro.name</th>
+      <th>pro.username</th>
+      <th>pro.email</th>
+      <th>pro.address.street</th>
+      <th>pro.phone</th>
+      <th>pro.company.name</th>
+      <th>pro.geo.lat</th>
+      <th>pro.geo.lng</th>
+    </tr>
+    <tr>
+      <td>{{ pro.id }}</td>
+      <td>{{ pro.name }}</td>
+      <td>{{ pro.username }}</td>
+      <td>{{ pro.email }}</td>
+      <td>{{ pro.address.street }}</td>
+      <td>{{ pro.phone }}</td>
+      <td>{{ pro.company.name }}</td>
+      <td>{{ pro.address.geo.lat }}</td>
+      <td>{{ pro.address.geo.lng }}</td>
+    </tr>
+  </table>

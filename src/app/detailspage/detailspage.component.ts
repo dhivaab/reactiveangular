@@ -18,6 +18,13 @@ export class DetailspageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('ng on init');
+  }
+  ngChanges() {
+    console.log('ng on changes');
+  }
+  ngDestroy() {
+    console.log('ng on destroy');
   }
 
   // add books

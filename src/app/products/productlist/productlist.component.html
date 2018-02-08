@@ -1,0 +1,37 @@
+
+  <table>
+    <tr>
+      <td>Product Id</td>
+      <td>Product Name</td>
+      <td>Rating</td>
+      <td>Amount</td>
+      <td>Quantity</td>
+    </tr>
+    <input [(ngModel)]= 'query'>
+<div *ngIf='products.length>1'>
+    <tr *ngFor='let pro of products | searchpipe:query'>
+      <td> {{ pro.ProductId }} </td>
+      <td> {{ pro.ProductName | uppercase | namespaces:'----' }} </td>
+      <td> {{ pro.Rating  }} </td>
+      <td> {{ pro.Amount | currency }} </td>
+      <td> {{ pro.Quantity | currency }} </td>
+    </tr>
+</div>
+<div>div value {{ products.length >0 ? " elements are present":" elements are not there" }}</div>
+<span [title]='color' (click)='spanonclick()' (mouseover)='spanmouseover()'>
+  this is new section value is based on certain condisionts
+</span>
+<input type ="button" value ='Submit' [(ngModel)]='hname' name='hname' (click)='onclickevent(products)'>
+
+<input [(ngModel)]= 'searchstring'>
+    <tr *ngFor='let pro of filterproducts'>
+      <td> {{ pro.ProductId }} </td>
+      <td> {{ pro.ProductName }} </td>
+      <td> {{ pro.Rating  }} </td>
+      <td> {{ pro.Amount | currency }} </td>
+      <td> {{ pro.Quantity | currency }} </td>
+    </tr>
+  </table>
+
+  
+
