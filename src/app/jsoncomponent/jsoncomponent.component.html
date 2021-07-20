@@ -1,0 +1,36 @@
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <ng-container *ngFor="let control of jsonFormData?.controls; let i = index">
+
+      <mat-label *ngIf="control.label !== ''">{{ control.label }}</mat-label>
+      <input matInput
+      *ngIf="
+        [
+          'text',
+          'password',
+          'email',
+          'number',
+          'search',
+          'tel',
+          'url'
+        ].includes(control.type)
+      "
+      [type]="control.type"
+      [formControlName]="control.name"
+      [value]="control.value"
+    />
+    <textarea
+    *ngIf="control.type === 'textarea'"
+    [formControlName]="control.name"
+    [value]="control.value"
+  ></textarea>
+  <input
+      *ngIf="control.type === 'checkbox'"
+      [formControlName]="control.name"
+      [checked]="control.value"
+      type= {{control.type}}
+    />
+    
+    </ng-container>
+    <button expand="full" type="submit">Submit</button>
+  </form>
